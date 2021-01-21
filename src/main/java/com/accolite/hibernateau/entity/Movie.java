@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity(name = "movie_table")
+@Entity(name = "movie")
 @Data
 public class Movie {
 

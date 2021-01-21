@@ -34,7 +34,7 @@ public class MovieRepository {
 
     public List<Movie> getMovieUsingQuery(int year, String language) {
         Query query =
-                entityManager.createQuery("select m from movie_table m where m.releaseYear > :rel_year and m.lang = :language");
+                entityManager.createQuery("select m from movie m where m.releaseYear > :rel_year and m.lang = :language");
         query.setParameter("rel_year", year);
         query.setParameter("language", language);
         entityManager.createNativeQuery("select * from movie m where m.release_year > 0");

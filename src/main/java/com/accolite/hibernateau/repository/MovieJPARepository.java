@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface MovieJPARepository extends CrudRepository<Movie, Integer> {
 
-    public Movie findMovieByName(String name);
+    public List<Movie> findMovieByName(String name);
 
     // select * from movie where name = :name
 

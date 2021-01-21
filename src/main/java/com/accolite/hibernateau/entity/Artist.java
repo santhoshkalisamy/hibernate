@@ -19,7 +19,7 @@ public class Artist {
     @Column(name  = "age")
     private Integer age;
 
-    @ManyToMany(mappedBy = "artists")
+    @ManyToMany()
     Set<Movie> movies;
 
 }

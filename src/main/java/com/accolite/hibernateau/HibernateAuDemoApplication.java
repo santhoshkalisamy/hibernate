@@ -14,6 +14,7 @@ import javax.annotation.Resource;
 import javax.transaction.Transactional;
 import java.sql.Date;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @SpringBootApplication
@@ -54,20 +55,24 @@ public class HibernateAuDemoApplication implements CommandLineRunner {
         movie.setName("Dark");
         movie.setDirectorName("XYZ");
         movie.setLang("en");
+        movie.setImdbRating(6.5);
         movie.setCertificate(certificate);
 
         //Save/Add
-        movieJPARepository.save(movie);
+        //movieJPARepository.save(movie);
 
         //
-        movieJPARepository.delete(movie);
+        //movieJPARepository.delete(movie);
 
         //movieRepository.addMovie(movie);
 
+        movieJPARepository.save(movie);
 
         //Movie fromDb = movieRepository.getMovieById(1);
 
-        //System.out.println(fromDb);
+        List<Movie> fromDb2 = movieJPARepository.findMovieByName("Dark");
+
+        System.out.println(fromDb2);
 
         //Ehcache manager - Caching
     }
